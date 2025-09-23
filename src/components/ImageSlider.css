@@ -1,0 +1,282 @@
+/* Main container holding both sections */
+
+.container {
+  padding: 0 10px;/* Reduce left and right padding */
+    display: flex;
+    width: 100%; /* Full width */
+    max-width: 1000px; /* Max width for larger screens */
+    height: 450px; /* Fixed height */
+    max-height: 700px;
+    margin: 0 auto; /* Center the container */
+    margin-top: 10vh;
+    background-color:  rgb(255, 128, 0);
+    overflow: hidden;
+    border-radius: 10px;
+
+  }
+  
+  /* Discount container */
+  .discount-container {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+    background-color: orange;
+    overflow: hidden;
+   
+  }
+  
+  /* Slider box with rounded corners */
+  /* Slider box with rounded corners */
+.slider-box {
+  margin: 15px;
+  width: 40%; /* Left side for image slider */
+  height: 95%;
+  overflow: hidden;
+  border-radius: 20px;
+  position: relative;
+}
+  
+  
+/* Image Slider */
+.slider {
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: absolute;
+  transition: opacity 1s ease-in-out;
+  object-fit: cover;
+}
+
+
+.slider img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+  
+  /* Overlay for text on image */
+  .overlay {
+    position: absolute;
+    bottom: 5%;
+    left: 5%;
+    text-align: left;
+    color: white;
+    font-family: 'Arial', sans-serif;
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.6);
+    border-radius: 10px;
+    max-width: 60%;
+  }
+  
+  .overlay h2 {
+    font-size: 2.5vw;
+    font-weight: bold;
+    margin: 0;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+  
+  /* Order button */
+  
+  
+
+  /* Discount section */
+  .discount-section {
+    width: 50%; /* Right side for discount section */
+    background-color: rgb(255, 128, 0);
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+    padding: 2vw;
+  }
+  
+  .discount-section h3 {
+    font-size: 2vw;
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+  
+  .discount-section p {
+    font-size: 1.5vw;
+    margin-bottom: 20px;
+  }
+  
+  
+  
+  
+  /* Media Queries for Responsiveness */
+  @media (max-width: 768px) {
+    .container {
+      width: 100%;
+      height: 50vh;
+    }
+  
+    .slider-box, .discount-section {
+      width: 100%;
+      height: 50vh;
+    }
+  
+    .overlay h2 {
+      font-size: 3.5vw;
+    }
+  
+    
+  
+    .discount-section h3 {
+      font-size: 3vw;
+    }
+  
+    .discount-section p {
+      font-size: 2.5vw;
+    }
+  
+    
+  }
+  
+  @media (max-width: 480px) {
+    .container {
+      height: 40vh;
+    }
+  
+    .slider-box, .discount-section {
+      height: 40vh;
+    }
+  
+    .overlay h2 {
+      font-size: 4vw;
+    }
+  
+    
+    .discount-section h3 {
+      font-size: 4vw;
+    }
+  
+    .discount-section p {
+      font-size: 3.5vw;
+    }
+  
+    
+  }
+  /* claim dscnt button*/
+/* From Uiverse.io by cssbuttons-io */ 
+.discount-section button {
+  --color: green;
+  font-family: inherit;
+  display: inline-block;
+  width: 8em;
+  height: 2.6em;
+  line-height: 2.5em;
+  margin: 20px;
+  position: relative;
+  cursor: pointer;
+  overflow: hidden;
+  border: 2px solid var(--color);
+  transition: color 0.5s;
+  z-index: 1;
+  font-size: 17px;
+  border-radius: 6px;
+  font-weight: 500;
+  color: var(--color);
+}
+
+.discount-section button:before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  background: var(--color);
+  height: 150px;
+  width: 200px;
+  border-radius: 50%;
+  transform: scale(0); /* Initially hide the element */
+  transition: transform 0.7s ease-in-out;
+}
+
+.discount-section button:hover {
+  color: #fff;
+ 
+}
+
+.discount-section button:before {
+  top: 100%;
+  left: 100%;
+  transition: all 0.7s;
+}
+
+.discount-section button:hover:before {
+  top: -30px;
+  left: -30px;
+  transform: scale(1); /* Scale the element on hover */
+}
+
+.discount-section:active:before {
+  background: #3a0ca3;
+  transition: background 0s;
+}
+/* order button*/
+.order-btn {
+  --color: orange;
+  font-family: inherit;
+  display: inline-block;
+  width: 8em;
+  height: 2.6em;
+  line-height: 2.5em;
+  position: absolute; /* Positioning relative to slider-box */
+  bottom: 10px; /* Fix the button at the bottom */
+  left: 50%; /* Center horizontally */
+  transform: translateX(-50%); /* Correct centering with transform */
+  cursor: pointer;
+  overflow: hidden;
+  border: 2px solid var(--color);
+  transition: color 0.5s;
+  z-index: 2; /* Ensure it's above the slider */
+  font-size: 17px;
+  border-radius: 6px;
+  font-weight: 500;
+  color: var(--color);
+  margin-bottom: 2vh;
+}
+
+/* Hover effects for the button remain unchanged */
+.order-btn:before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  background: var(--color);
+  height: 150px;
+  width: 200px;
+  border-radius: 50%;
+  transform: scale(0); /* Initially hide the element */
+  transition: transform 0.7s ease-in-out;
+  top: 100%;
+  left: 100%;
+  transition: all 0.7s;
+}
+.order-btn:hover {
+  color: #fff;
+}
+
+.order-btn:before {
+  top: 100%;
+  left: 100%;
+  transition: all 0.7s;
+}
+
+.order-btn:hover:before {
+  top: -30px;
+  left: -30px;
+  transform: scale(1); /* Scale the element on hover */
+}
+
+.order-btn:active:before {
+  background: #3a0ca3;
+  transition: background 0s;
+}

@@ -1,0 +1,74 @@
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color:peachpuff;
+  padding: 8px 16px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  box-sizing: border-box;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 26px;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links li {
+  white-space: nowrap;
+}
+
+.nav-links li a {
+  text-decoration: none;
+  color: black;
+  font-weight: bold;
+  font-size: 1rem;
+  transition: color 0.3s ease;
+}
+
+.nav-links li a:hover {
+  color:green;
+  text-decoration: underline;
+}
+
+/* Logo styles */
+.navbar .logo img {
+  width: 50px;  /* Adjust width as needed */
+  height: auto;  /* Maintain aspect ratio */
+  margin-right: 10px;  /* Optional: space between logo and text */
+  border-radius: 50%;
+}
+.navbar .logo {
+  display: flex; /* Make the logo section a flex container */
+  align-items: center; /* Vertically align the logo text with the image */
+}
+.navbar .logo  {
+  color: rgb(199, 114, 3);
+  text-decoration:underline;
+  font-weight:800;
+  font-size: larger;
+  text-align: center;
+  font-size: 1.5rem;
+  margin: 0;
+  font-family: 'Arial', sans-serif;
+  
+}
+
+/* Ensure no link is hidden */
+.navbar {
+  overflow: visible;
+}
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 768px) {
+  .nav-links {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}

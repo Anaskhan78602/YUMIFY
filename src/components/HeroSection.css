@@ -1,0 +1,37 @@
+.container {
+  margin-top: 60px; /* Adjust this value to match your navbar's height */
+}
+
+.hero {
+    /*background-image: url('../assets/images/food4.jpg'); /* Replace with your image path */
+    background-size: cover;
+    background-position: center;
+    text-align: center;
+    color: #fff;
+    padding: 100px 20px;
+  }
+  
+  .hero h1 {
+    font-size: 3rem;
+    margin-bottom: 16px;
+  }
+  
+  .hero p {
+    font-size: 1.2rem;
+    margin-bottom: 24px;
+  }
+  
+  .hero .order-now {
+    background-color: #6a1e55;
+    color: #fff;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 4px;
+    font-size: 1rem;
+    cursor: pointer;
+  }
+  
+  .hero .order-now:hover {
+    background-color: #a64d79;
+  }
+  

@@ -1,0 +1,66 @@
+/* Checkout container styles */
+.checkout {
+    padding: 20px;
+    background-color: #f8f8f8;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 1200px;
+    margin: 0 auto;
+    animation: fadeIn 1s ease-out;
+  }
+ 
+.remove-item-button{
+  width:10vh;
+  height:4vh;
+  background-color: #ff3b3b;
+  border:transparent;
+  border-radius:.7vh;
+  font-weight: bold;
+  color: white;
+
+}
+.remove-item-button:hover{
+  color:black;
+  background-color:brown;
+}
+  /* Checkout button styles */
+  .checkout-buttons {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px; /* Adds space between buttons */
+    margin-top: 20px;
+    position: relative; /* Ensure container defines button positions */
+  }
+  
+  
+  .checkout-button:hover {
+    background-color: #ff3b3b;
+  }
+  
+  /* Fading animation */
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  
+  /* Mobile responsiveness */
+  @media (max-width: 768px) {
+    .checkout {
+      padding: 15px;
+    }
+  
+    .checkout-button {
+      padding: 8px 16px;
+      font-size: 1rem;
+    }
+  }
+  
+ 
+#wait{
+   color:red;
+  }

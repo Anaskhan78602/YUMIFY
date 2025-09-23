@@ -1,0 +1,27 @@
+.category-section {
+    display: flex;
+    justify-content: space-around;
+    margin: 20px 0;
+  }
+  
+  .category {
+    text-align: center;
+    cursor: pointer;
+    width: 20%;
+  }
+  
+  .category img {
+    width: 100%;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+  }
+  
+  .category img:hover {
+    transform: scale(1.05);
+  }
+  
+  .category p {
+    margin-top: 10px;
+    font-weight: bold;
+  }
+  

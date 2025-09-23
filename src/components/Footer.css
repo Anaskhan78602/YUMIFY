@@ -1,0 +1,19 @@
+.footer {
+  background-color: peachpuff;
+  color: black;
+  font-weight: bolder;
+  text-align: center;
+  padding: 16px 0px;
+
+  position: fixed; /* Fix footer at the bottom */
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000; /* Make sure footer is on top */
+  
+}
+
+.footer p {
+  margin: 0;
+  font-size: 0.9rem;
+}

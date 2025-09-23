@@ -1,0 +1,137 @@
+
+.food-card {
+  margin-bottom: 2vh;
+  width: 250px;
+  border: 1px solid #ddd;
+  background-color: white;
+  border-radius: 8px;
+  padding: 16px;
+  gap: 20px;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0px 4px 5px rgb(0,0,0,0.4);
+  overflow: hidden; /* Ensure the image doesn't overflow the rounded corners */
+}
+
+.food-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 9px 18px rgba(0, 0, 0, 0.8);
+}
+
+.food-card-image {
+  position: relative;
+  overflow: hidden;
+  border-radius: 8px;
+}
+
+.food-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 8px;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.food-card img[loading="lazy"] {
+  opacity: 0;
+}
+
+.food-card img[loading="lazy"].loaded {
+  opacity: 1;
+}
+
+.food-card-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 10px; /* Add space between buttons */
+  
+}
+
+.food-card button {
+  background-color:orange ;
+  color: #fff;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.food-card button:hover {
+  background-color: orange;
+}
+
+
+.food-card h3 {
+  font-size: 1.2rem;
+  margin-top: 12px;
+  margin-bottom: 8px;
+}
+
+.food-card p {
+  font-size: 1rem;
+  color: #888;
+  margin-bottom: 12px;
+}
+
+.food-card button {
+  background-color: orange;
+  color: #fff;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.food-card button:hover {
+  background-color: rgb(113, 90, 49);
+}
+
+/* Popup styles */
+/* Popup styles */
+.popup {
+  position: absolute;
+  top: -50px; /* Place the popup above the card */
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #fff;
+  border: 1px solid #ddd;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  padding: 10px;
+  border-radius: 8px;
+  z-index: 1000;
+  text-align: center;
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+.popup p {
+  font-size: 0.9rem;
+  margin: 0 0 10px;
+  color: #333;
+}
+
+.popup button {
+  background-color: #6a1e55;
+  color: #fff;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.popup button:hover {
+  background-color: #a64d79;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
