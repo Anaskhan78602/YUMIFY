@@ -6,7 +6,7 @@ It provides a smooth user experience with **unique UI animations**, **dynamic ca
 ---
 
 ## 🚀 Live Demo
-👉 [View Yumify Here](https://your-live-link.com)  
+👉 [View Yumify Here](https://yumify-food-delivery.netlify.app/)  
 *(Replace with your deployed link – Netlify, Vercel, or GitHub Pages)*  
 
 ---
@@ -28,7 +28,9 @@ It provides a smooth user experience with **unique UI animations**, **dynamic ca
 ---
 
 ## 📸 Preview
-![App Screenshot](./screenshot.png)  
+![App Screenshot](## 📸 Preview
+![App Screenshot](./src/assets/images/logo.png)
+)  
 *(Add your app screenshot or demo GIF here)*  
 
 ---
