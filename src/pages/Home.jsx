@@ -1,47 +1,71 @@
-import React, { useEffect, useState } from "react";
-import ImageSlider from "../components/ImageSlider"; // Import the ImageSlider
+import React, { useState } from "react";
+import ImageSlider from "../components/ImageSlider";
 import HeroSection from "../components/HeroSection";
 import FoodCard from "../components/FoodCard";
-
-
-// Import the images for categories
-import pizzaImage from "../assets/images/categories/pizza.jpg";
-import northIndianImage from "../assets/images/categories/North-Indian.jpg";
-import burgerImage from "../assets/images/categories/burger.jpg";
-import biryaniImage from "../assets/images/categories/biryani.jpg";
-import chineseImage from "../assets/images/categories/Chinese.jpg";
-import cakeImage from "../assets/images/categories/cake.jpg";
-import noodlesImage from "../assets/images/categories/noodles.jpg";
-import momoImage from "../assets/images/categories/momo.jpg";
-import dosaImage from "../assets/images/categories/dosa.jpg";
-import choleImage from "../assets/images/categories/chole.jpg";
-import kebabImage from "../assets/images/categories/kebab.jpg";
-import rollImage from "../assets/images/categories/roll.jpg";
-import pohaImage from "../assets/images/categories/poha.jpg";
-import parathaImage from "../assets/images/categories/paratha.jpg";
-import tea from "../assets/images/categories/tea.jpg";
-import lassi from "../assets/images/categories/lassi.jpg";
-import coffee from "../assets/images/categories/coffee.jpg";
-
-// Import the API function
-import { fetchMenuItems } from "../Services/api";
-
 import "./Home.css";
 
+/* Cloudinary image URLs (MUST be strings, NOT imports) */
+const pizzaImage =
+  "https://res.cloudinary.com/dqi2t1vld/image/upload/v1768199929/pizza_o3cm3c.jpg";
+const northIndianImage =
+  "https://res.cloudinary.com/dqi2t1vld/image/upload/v1768199928/North-Indian_d5nimo.jpg";
+const burgerImage =
+  "https://res.cloudinary.com/dqi2t1vld/image/upload/v1768199913/burger_qeuoj3.jpg";
+const biryaniImage =
+  "https://res.cloudinary.com/dqi2t1vld/image/upload/v1768199913/biryani_ddrpu0.jpg";
+const chineseImage =
+  "https://res.cloudinary.com/dqi2t1vld/image/upload/v1768199889/pasta_xq68s1.jpg";
+const cakeImage =
+  "https://res.cloudinary.com/dqi2t1vld/image/upload/v1768199914/cake_xonsvv.jpg";
+const noodlesImage =
+  "https://res.cloudinary.com/dqi2t1vld/image/upload/v1768199928/noodles_shymux.jpg";
+const momoImage =
+  "https://res.cloudinary.com/dqi2t1vld/image/upload/v1768199923/momo_ghvha0.jpg";
+const dosaImage =
+  "https://res.cloudinary.com/dqi2t1vld/image/upload/v1768199922/dosa_bcsq8d.jpg";
+const choleImage =
+  "https://res.cloudinary.com/dqi2t1vld/image/upload/v1768199914/chole_oq5yqp.jpg";
+const kebabImage =
+  "https://res.cloudinary.com/dqi2t1vld/image/upload/v1768199923/kebab_bhomgt.jpg";
+const rollImage =
+  "https://res.cloudinary.com/dqi2t1vld/image/upload/v1768199934/roll_eijwop.jpg";
+const pohaImage =
+  "https://res.cloudinary.com/dqi2t1vld/image/upload/v1768199929/poha_ycommj.jpg";
+const parathaImage =
+  "https://res.cloudinary.com/dqi2t1vld/image/upload/v1768199929/paratha_la8g0x.jpg";
+const teaImage =
+  "https://res.cloudinary.com/dqi2t1vld/image/upload/v1768199934/tea_vewlc3.jpg";
+const coffeeImage =
+  "https://res.cloudinary.com/dqi2t1vld/image/upload/v1768199916/coffee_kxsmum.jpg";
+const lassiImage =
+  "https://res.cloudinary.com/dqi2t1vld/image/upload/v1768199923/lassi_imtefz.jpg";
+
 const Home = () => {
-  const [menuItems, setMenuItems] = useState([]);
-  const [selectedCategory, setSelectedCategory] = useState(""); // Track selected category
+  const [selectedCategory, setSelectedCategory] = useState("");
 
-  // Fetch the menu items from the API
-  useEffect(() => {
-    const getMenuItems = async () => {
-      const items = await fetchMenuItems();
-      setMenuItems(items);
-    };
-    getMenuItems();
-  }, []);
+  // Hardcoded food items with Cloudinary images (same as ImageSlider logic)
+  const allFoodItems = [
+    { id: 1, name: "Pizza", price: 399, category: "Pizza", image: pizzaImage },
+    { id: 2, name: "Burger", price: 199, category: "Burger", image: burgerImage },
+    { id: 3, name: "North Indian", price: 199, category: "North Indian", image: northIndianImage },
+    { id: 4, name: "Biryani", price: 299, category: "Biryani", image: biryaniImage },
+    { id: 5, name: "Chinese", price: 250, category: "Chinese", image: chineseImage },
+    { id: 6, name: "Cake", price: 350, category: "Cake", image: cakeImage },
+    { id: 7, name: "Noodles", price: 180, category: "Noodles", image: noodlesImage },
+    { id: 8, name: "Momo", price: 120, category: "Momo", image: momoImage },
+    { id: 9, name: "Dosa", price: 120, category: "Dosa", image: dosaImage },
+    { id: 10, name: "Chole Bhature", price: 150, category: "Chole Bhature", image: choleImage },
+    { id: 11, name: "Kebab", price: 200, category: "Kebab", image: kebabImage },
+    { id: 12, name: "Rolls", price: 150, category: "Rolls", image: rollImage },
+    { id: 13, name: "Poha", price: 100, category: "Poha", image: pohaImage },
+    { id: 14, name: "Paratha", price: 80, category: "Paratha", image: parathaImage },
+    { id: 15, name: "Tea", price: 50, category: "Tea", image: teaImage },
+    { id: 16, name: "Coffee", price: 60, category: "Coffee", image: coffeeImage },
+    { id: 17, name: "Lassi", price: 70, category: "Lassi", image: lassiImage },
+  ];
 
-  // Define the images and text for the category section
+  const [allItems] = useState(allFoodItems);
+
   const foodCategories = [
     { image: pizzaImage, name: "Pizza" },
     { image: northIndianImage, name: "North Indian" },
@@ -57,77 +81,79 @@ const Home = () => {
     { image: rollImage, name: "Rolls" },
     { image: pohaImage, name: "Poha" },
     { image: parathaImage, name: "Paratha" },
-    { image: tea, name: "Tea" },
-    { image: coffee, name: "Coffee" },
-    { image: lassi, name: "Lassi" },
+    { image: teaImage, name: "Tea" },
+    { image: coffeeImage, name: "Coffee" },
+    { image: lassiImage, name: "Lassi" },
   ];
 
-  // Filter menu items by selected category
   const filteredMenuItems = selectedCategory
-    ? menuItems.filter(item => item.category.toLowerCase() === selectedCategory.toLowerCase())
-    : menuItems;
+    ? allItems.filter(
+        (item) =>
+          item.category?.toLowerCase() === selectedCategory.toLowerCase()
+      )
+    : allItems;
 
-  // Scroll to the food cards section when category is selected
   const handleCategoryClick = (category) => {
     setSelectedCategory(category);
-    const foodCardsSection = document.getElementById("food-cards-section");
-    if (foodCardsSection) {
-      foodCardsSection.scrollIntoView({ behavior: "smooth" });
+    const section = document.getElementById("food-cards-section");
+    if (section) {
+      section.scrollIntoView({ behavior: "smooth" });
     }
   };
 
   return (
     <div className="home">
-      {/* Add the ImageSlider component with category-based data */}
       <ImageSlider slides={foodCategories} />
 
-      {/* Food Category Scroller */}
       <section className="food-category-section">
         <h2 className="category-title">Order our best food options</h2>
         <div className="category-scroller">
           {foodCategories.map((category, index) => (
             <div
-              className="category-item"
               key={index}
-              onClick={() => handleCategoryClick(category.name)} // Handle category click
+              className="category-item"
+              onClick={() => handleCategoryClick(category.name)}
             >
-              <img src={category.image} alt={category.name} className="category-image" />
+              <img
+                src={category.image}
+                alt={category.name}
+                className="category-image"
+              />
               <p className="category-name">{category.name}</p>
             </div>
           ))}
         </div>
       </section>
 
-      {/* Hero Section */}
       <HeroSection />
 
-      {/* Popular Dishes */}
       <section className="popular-dishes">
         <h2>Popular Dishes</h2>
         <div className="dishes">
           {filteredMenuItems.map((item) => (
             <FoodCard
               key={item.id}
+              id={item.id}
               name={item.name}
               price={item.price}
-              id={item.id} // Ensure id is passed to FoodCard
-              category={item.category} // Ensure category is passed correctly
+              category={item.category}
+              image={item.image}
             />
           ))}
         </div>
       </section>
 
-      {/* Food Cards Section */}
       <section className="food-cards-section" id="food-cards-section">
         <h2>Our Delicious Menu</h2>
         <div className="food-cards">
           {filteredMenuItems.map((item) => (
             <FoodCard
               key={item.id}
-              name={item.name}
-              price={item.price} // Ensure price is passed correctly
-              category={item.category} // Ensure category is passed correctly
               id={item.id}
+              name={item.name}
+              price={item.price}
+              category={item.category}
+              image={item.image}
             />
           ))}
         </div>

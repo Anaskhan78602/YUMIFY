@@ -30,13 +30,6 @@
   object-fit: cover;
   border-radius: 8px;
   transition: opacity 0.3s ease-in-out;
-}
-
-.food-card img[loading="lazy"] {
-  opacity: 0;
-}
-
-.food-card img[loading="lazy"].loaded {
   opacity: 1;
 }
 

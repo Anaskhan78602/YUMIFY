@@ -5,24 +5,24 @@ import FoodCard from "../components/FoodCard";
 import SearchBar from "../components/SearchBar";
 import "./Menu.css";
 
-// Import category images
-import pizzaImage from "../assets/images/categories/pizza.jpg";
-import northIndianImage from "../assets/images/categories/North-Indian.jpg";
-import burgerImage from "../assets/images/categories/burger.jpg";
-import biryaniImage from "../assets/images/categories/biryani.jpg";
-import chineseImage from "../assets/images/categories/Chinese.jpg";
-import cakeImage from "../assets/images/categories/cake.jpg";
-import noodlesImage from "../assets/images/categories/noodles.jpg";
-import momoImage from "../assets/images/categories/momo.jpg";
-import dosaImage from "../assets/images/categories/dosa.jpg";
-import choleImage from "../assets/images/categories/chole.jpg";
-import kebabImage from "../assets/images/categories/kebab.jpg";
-import rollImage from "../assets/images/categories/roll.jpg";
-import pohaImage from "../assets/images/categories/poha.jpg";
-import parathaImage from "../assets/images/categories/paratha.jpg";
-import tea from "../assets/images/categories/tea.jpg";
-import lassi from "../assets/images/categories/lassi.jpg";
-import coffee from "../assets/images/categories/coffee.jpg";
+// Define remote images as constants (DO NOT use import for URLs)
+const pizzaImage = "https://res.cloudinary.com/dqi2t1vld/image/upload/v1768199929/pizza_o3cm3c.jpg";
+const northIndianImage = "https://res.cloudinary.com/dqi2t1vld/image/upload/v1768199928/North-Indian_d5nimo.jpg";
+const burgerImage = "https://res.cloudinary.com/dqi2t1vld/image/upload/v1768199913/burger_qeuoj3.jpg";
+const biryaniImage = "https://res.cloudinary.com/dqi2t1vld/image/upload/v1768199913/biryani_ddrpu0.jpg";
+const chineseImage = "https://res.cloudinary.com/dqi2t1vld/image/upload/v1768199889/pasta_xq68s1.jpg";
+const cakeImage = "https://res.cloudinary.com/dqi2t1vld/image/upload/v1768199914/cake_xonsvv.jpg";
+const noodlesImage = "https://res.cloudinary.com/dqi2t1vld/image/upload/v1768199928/noodles_shymux.jpg";
+const momoImage = "https://res.cloudinary.com/dqi2t1vld/image/upload/v1768199923/momo_ghvha0.jpg";
+const dosaImage = "https://res.cloudinary.com/dqi2t1vld/image/upload/v1768199922/dosa_bcsq8d.jpg";
+const choleImage = "https://res.cloudinary.com/dqi2t1vld/image/upload/v1768199914/chole_oq5yqp.jpg";
+const kebabImage = "https://res.cloudinary.com/dqi2t1vld/image/upload/v1768199923/kebab_bhomgt.jpg";
+const rollImage = "https://res.cloudinary.com/dqi2t1vld/image/upload/v1768199934/roll_eijwop.jpg";
+const pohaImage = "https://res.cloudinary.com/dqi2t1vld/image/upload/v1768199929/poha_ycommj.jpg";
+const parathaImage = "https://res.cloudinary.com/dqi2t1vld/image/upload/v1768199929/paratha_la8g0x.jpg";
+const teaImage = "https://res.cloudinary.com/dqi2t1vld/image/upload/v1768199934/tea_vewlc3.jpg";
+const lassiImage = "https://res.cloudinary.com/dqi2t1vld/image/upload/v1768199923/lassi_imtefz.jpg";
+const coffeeImage = "https://res.cloudinary.com/dqi2t1vld/image/upload/v1768199916/coffee_kxsmum.jpg";
 
 const Menu = () => {
   const [menuItems, setMenuItems] = useState([]);
@@ -30,7 +30,6 @@ const Menu = () => {
   const [suggestions, setSuggestions] = useState([]);
   const [priceRange, setPriceRange] = useState([0, 1000]);
   const navigate = useNavigate();
-  
 
   useEffect(() => {
     const fetchData = async () => {
@@ -66,9 +65,9 @@ const Menu = () => {
     { image: rollImage, name: "Rolls" },
     { image: pohaImage, name: "Poha" },
     { image: parathaImage, name: "Paratha" },
-    { image: tea, name: "Tea" },
-    { image: coffee, name: "Coffee" },
-    { image: lassi, name: "Lassi" },
+    { image: teaImage, name: "Tea" },
+    { image: coffeeImage, name: "Coffee" },
+    { image: lassiImage, name: "Lassi" },
   ];
 
   const filteredItems = menuItems.filter((item) => {
@@ -125,7 +124,14 @@ const Menu = () => {
 
       <div id="food-cards-section" className="menu-items">
         {filteredItems.map((item) => (
-          <FoodCard key={item.id} id={item.id} name={item.name} price={item.price} category={item.category} />
+          <FoodCard
+            key={item.id}
+            id={item.id}
+            name={item.name}
+            price={item.price}
+            category={item.category}
+            image={item.image}
+          />
         ))}
       </div>
     </div>
